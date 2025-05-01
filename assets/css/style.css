@@ -493,3 +493,355 @@ footer {
   color: #007acc;
   transition: color 0.3s ease;
 }
+
+
+/* === Storia CSS migliorato === */
+
+/* ------------------------- */
+/* Page Header (Hero Section) */
+/* ------------------------- */
+
+.page-header {
+  text-align: center;
+  position: relative;
+  padding: 0;
+}
+
+.page-header .container {
+  background: url('../img/\(1\).jpg') no-repeat center center / cover;
+  padding: 8rem 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  position: relative;
+  width: 100%;
+}
+
+.page-header .container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 92, 153, 0.5), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.page-header .container h1,
+.page-header .container p {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.page-header .container h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container p {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------------- */
+/* Sezione Contenuto Generico */
+/* ------------------------- */
+
+.content {
+  padding: 4rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.content .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.content h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #005c99;
+  margin: 3rem 0 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.content h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: linear-gradient(to right, #00b4db, #007acc);
+  border-radius: 3px;
+  margin-top: 0.8rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.75;
+}
+
+/* ------------------------- */
+/* Content Blocks */
+/* ------------------------- */
+
+.content-block {
+  background-color: #f8faff;
+  border-left: 5px solid #00b4db;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.content-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 180, 219, 0.15);
+}
+
+/* ------------------------- */
+/* Sezione Timeline Storica */
+/* ------------------------- */
+
+.deep-dive-section {
+  background-color: #f5f9fc;
+  padding: 4rem 1.5rem;
+  border-top: 3px solid #005c99;
+  border-bottom: 3px solid #005c99;
+}
+
+.historical-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.4rem;
+  color: #003b5c;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #00b4db, #007acc);
+  margin: 1rem auto 0;
+  border-radius: 3px;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: #007acc;
+  z-index: 0;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.timeline-date {
+  width: 130px;
+  background-color: #005c99;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.timeline-content {
+  width: calc(50% - 2rem);
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #005c99;
+  border-bottom: 2px solid #e0f0fb;
+  padding-bottom: 0.5rem;
+}
+
+/* Quote */
+blockquote {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #00b4db;
+  color: #3a7ca5;
+  font-style: italic;
+}
+
+/* ------------------------- */
+/* Immagini e Note Storiche */
+/* ------------------------- */
+
+.historical-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.historical-image img:hover {
+  transform: scale(1.02);
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.historical-footnote {
+  background-color: #e1f0f7;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-style: italic;
+  border-radius: 8px;
+  color: #005c99;
+  font-weight: 500;
+}
+
+/* ------------------------- */
+/* Lista Storica & Caratteristiche moderne */
+/* ------------------------- */
+
+.historical-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.historical-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.historical-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007acc;
+  font-weight: bold;
+}
+
+.modern-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  background-color: #f8faff;
+  border-left: 4px solid #00b4db;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-item h3 {
+  margin-top: 0;
+  color: #005c99;
+}
+
+.feature-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 180, 219, 0.12);
+}
+
+/* ------------------------- */
+/* Footer Migliorato */
+/* ------------------------- */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f8fb;
+  color: #555;
+  border-top: 1px solid #dde5ec;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #007acc;
+  margin: 0 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #005c99;
+}
+
+/* ------------------------- */
+/* Responsive Improvements */
+/* ------------------------- */
+
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-date {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .modern-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .page-header .container {
+    padding: 5rem 1rem;
+  }
+}
