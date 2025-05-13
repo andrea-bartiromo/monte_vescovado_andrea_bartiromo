@@ -1,4 +1,3 @@
-
 /* ==========================================
    BASE & RESET
    ========================================== */
@@ -64,19 +63,26 @@ ul, ol {
 /* Buttons */
 .btn {
   display: inline-block;
-  background: linear-gradient(to right, #007acc, #00b4db);
+  padding: 0.8rem 2rem;
+  background-color: #c93c37; /* Colore principale */
   color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
   text-decoration: none;
+  border-radius: 50px;
   font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
   margin-top: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
+  background-color: #e04b46;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 180, 219, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Alternate button style */
@@ -93,7 +99,7 @@ ul, ol {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -129,9 +135,7 @@ ul, ol {
 }
 
 /* ==========================================
-  /* HERO SECTION
-   ========================================== */
-/* HERO SECTION
+   HERO SECTION
    ========================================== */
 .hero {
   position: relative;
@@ -164,8 +168,6 @@ ul, ol {
 .hero-contatti {
   background-image: url('../img/contatti2.png');
 }
-
-
 
 .hero::before {
   content: '';
@@ -211,39 +213,6 @@ ul, ol {
   font-weight: 500;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background-color: #c93c37;
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #e04b46;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* Page Header - Alt Hero Style */
 .page-header.alt-style {
   position: relative;
@@ -301,21 +270,34 @@ ul, ol {
 .features {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
-.features h2 {
+.section-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-align: center;
+  color: #003b5c;
+  margin-bottom: 40px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #00b4db, #007acc);
+  margin: 1rem auto 0;
+  border-radius: 3px;
 }
 
 .features-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne in riga */
+  gap: 24px; /* spazio bilanciato tra card */
+  margin-top: 4rem; /* margine sopra più equilibrato */
 }
+
 
 .feature-box {
   max-width: 300px;
@@ -378,6 +360,26 @@ ul, ol {
   margin-top: 2rem;
 }
 
+.feature-card {
+  background: white;
+  border: 1px solid #007BFF;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #007BFF;
+}
+
 /* ==========================================
    CALL TO ACTION
    ========================================== */
@@ -391,17 +393,16 @@ ul, ol {
 /* ==========================================
    DEEP DIVE SECTION & TIMELINE
    ========================================== */
-   .deep-dive {
-    position: relative;
-    background-image: url('../img/nuceria\ alfaterna.jpeg'); /* 🔁 modifica con il tuo path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #fff;
-    padding: 4rem 2rem;
-  }
-  
+.deep-dive {
+  position: relative;
+  background-image: url('../img/nuceria\ alfaterna.jpeg'); /* 🔁 modifica con il tuo path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 4rem 2rem;
+}
 
 .deep-dive::before {
   content: '';
@@ -513,23 +514,6 @@ ul, ol {
   margin: 0 auto;
 }
 
-.section-title {
-  font-size: 2.4rem;
-  color: #003b5c;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(to right, #00b4db, #007acc);
-  margin: 1rem auto 0;
-  border-radius: 3px;
-}
-
 .timeline-container {
   position: relative;
   padding: 2rem 0;
@@ -619,11 +603,22 @@ ul, ol {
 }
 
 blockquote {
-  margin-top: 1rem;
-  padding-left: 1rem;
-  border-left: 4px solid #00b4db;
-  color: #3a7ca5;
+  margin: 20px 0;
+  padding-left: 20px;
+  border-left: 4px solid #007BFF;
   font-style: italic;
+  color: #333;
+  background-color: #f9fcff;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+  font-style: normal;
 }
 
 /* Card Styles */
@@ -735,6 +730,15 @@ blockquote {
   font-weight: 600;
 }
 
+/* Card Materiali */
+.card-materiali {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
 /* ==========================================
    LISTS
    ========================================== */
@@ -839,6 +843,64 @@ blockquote {
   font-size: 0.9rem;
   color: #666;
   margin-top: 0.5rem;
+}
+
+/* Sezione fotografica/carosello */
+.sezione-fotografica {
+  background-color: #f0f0f0; /* Sfondo grigio chiaro per il carosello */
+  padding: 30px 0;
+}
+
+.box-bordo-blu {
+  border: 1px solid #007bff; /* Bordo blu sottile */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Stile per le immagini del carosello */
+.carousel-item img {
+  max-height: 400px; /* Limita l'altezza dell'immagine per mantenerla più compatta */
+  object-fit: cover; /* Mantieni il rapporto dell'immagine */
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Ombra delicata per un effetto sottile */
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.03); /* Zoom leggero quando l'immagine è in hover */
+}
+
+/* Didascalie */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-trasparente per le didascalie */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  bottom: 15%; /* Posiziona la didascalia più in basso */
+}
+
+.caption-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.caption-description {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Stile per i controlli del carosello */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #007bff; /* Colore blu per le frecce */
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+  background-color: #0056b3; /* Cambia colore quando si passa sopra le frecce */
 }
 
 /* ==========================================
@@ -950,150 +1012,5 @@ footer {
 
 .footer-container {
   background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-}
 
-.footer-container ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.footer-container ul li {
-  display: inline;
-  margin: 0 1rem;
-}
-
-.footer-container ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-container ul li a:hover {
-  text-decoration: underline;
-}
-
-/* ==========================================
-   RESPONSIVE
-   ========================================== */
-@media (max-width: 768px) {
-  /* Layout */
-  .content {
-    padding: 2rem 1rem;
   }
-  
-  .container {
-    padding: 0 1rem;
-  }
-  
-  /* Hero */
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .page-header .container {
-    padding: 2rem 1rem;
-  }
-  
-  /* Features */
-  .features-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .feature-box {
-    width: 90%;
-  }
-  
-  /* Timeline */
-  .timeline::before,
-  .timeline-container::before {
-    left: 20px;
-    transform: none;
-  }
-  
-  .timeline-item {
-    flex-direction: column;
-  }
-  
-  .timeline-item.right {
-    justify-content: flex-start;
-  }
-  
-  .timeline-item .content {
-    width: 100%;
-    padding-left: 2.5rem;
-  }
-  
-  .timeline-item::after {
-    left: 10px;
-    transform: none;
-  }
-  
-  .timeline-date {
-    margin-bottom: 1rem;
-  }
-  
-  .timeline-content {
-    width: 100%;
-    margin-left: 0;
-  }
-  
-  /* Modern Features */
-  .modern-features {
-    grid-template-columns: 1fr;
-  }
-  
-  /* Card Grid */
-  .card-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .card-grid .card {
-    width: 100%;
-    max-width: 90%;
-  }
-  
-  /* Card */
-  .card {
-    padding: 15px;
-  }
-  
-  /* Section Title */
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  /* Content headers */
-  .content h2 {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  .btn {
-    padding: 0.6rem 1.5rem;
-  }
-}
-
-
-.card-materiali {
-  background-color: #f8f8f8;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-top: 2rem;
-}
