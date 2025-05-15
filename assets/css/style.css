@@ -51,6 +51,7 @@ ul, ol {
   padding: 0 2rem;
 }
 
+
 .content {
   padding: 4rem 2rem;
   background-color: #ffffff;
@@ -168,6 +169,62 @@ ul, ol {
 .hero-contatti {
   background-image: url('../img/contatti2.png');
 }
+
+.hero-palazzo {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('../assets/img/palazzo-hero.jpg') center/cover no-repeat;
+      height: 70vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-palazzo h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section img {
+      width: 100%;
+      max-width: 500px;
+      margin: 1rem auto;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin: 2rem 0;
+      color: #555;
+    }
+
+    .info-box {
+      background-color: #f8f9fa;
+      padding: 1rem 2rem;
+      border-left: 4px solid #7a3e3e;
+      margin: 2rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .two-columns {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .two-columns > div {
+        flex: 1;
+      }
+    }
 
 .hero::before {
   content: '';
@@ -989,28 +1046,40 @@ blockquote cite {
    ========================================== */
 footer {
   text-align: center;
-  padding: 2rem;
-  background-color: #f4f8fb;
-  color: #555;
-  border-top: 1px solid #dde5ec;
+  padding: 0.4rem 0; /* Ridottissimo */
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  border-top: 3px solid #007acc;
+  font-size: 0.75rem; /* Testo piccolo ma leggibile */
+  line-height: 1.2;
 }
 
 .footer-links {
-  margin-top: 1rem;
+  margin-top: 0.3rem;
 }
 
 .footer-links a {
-  color: #007acc;
-  margin: 0 0.8rem;
+  color: #1abc9c;
+  margin: 0 0.4rem;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 500;
+  font-size: 0.75rem;
 }
 
 .footer-links a:hover {
-  color: #005c99;
+  color: #16a085;
 }
 
-.footer-container {
-  background-color: #2c3e50;
+.footer-social a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #ecf0f1;
+  margin: 0 6px;
+  transition: color 0.3s;
+}
 
-  }
+.footer-social a:hover {
+  color: #3498db;
+}
+
+

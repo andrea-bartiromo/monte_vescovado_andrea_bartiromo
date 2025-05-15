@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palazzo Vescovile - Il Vescovado di Nocera</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007acc;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #005c99;
+    }
+
+    ul, ol {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: #c93c37;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: none;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+
+    .btn:hover {
+      background-color: #e04b46;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #007acc;
+    }
+
+    .hero-palazzo {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background-image: url('../assets/img/palazzo\ vescovile.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2rem;
+    }
+
+    .hero-palazzo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+      max-width: 750px;
+      width: 100%;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-palazzo h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .hero-palazzo p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      color: #005c99;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: linear-gradient(to right, #00b4db, #007acc);
+      border-radius: 3px;
+      margin-top: 0.8rem;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .two-columns > div {
+      flex: 1 1 400px;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .info-box {
+      background-color: #f8f9fa;
+      padding: 1.5rem 2rem;
+      border-left: 4px solid #7a3e3e;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin: 2rem 0;
+      color: #555;
+      font-size: 1.2rem;
+      padding: 2rem;
+      background-color: #f0f4f8;
+      border-radius: 8px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 2rem 0;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #007acc;
+      font-weight: bold;
+    }
+
+    .call-to-action {
+      background: linear-gradient(to right, #007acc, #00b4db);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .footer-container {
+      background-color: #34495e;
+      color: #ecf0f1;
+      padding: 1.5rem 0;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .footer-content h4 {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .footer-links a {
+      color: #1abc9c;
+      margin: 0.8rem;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    
+    .footer-social a {
+      margin: 0 10px;
+      font-size: 1.3rem;
+      color: #ecf0f1;
+    }
+
+    @media (max-width: 768px) {
+      .two-columns {
+        flex-direction: column;
+      }
+      
+      .hero-palazzo h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-palazzo p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Vescovado</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../storia.html">Storia</a></li>
+        <li><a href="../eventi.html">Eventi</a></li>
+        <li><a href="../scopri.html">Scopri</a></li>
+        <li><a href="../contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-palazzo">
+      <div class="hero-content">
+        <h1>Palazzo Vescovile</h1>
+        <p>Residenza storica dei vescovi di Nocera, custode di storia, arte e spiritualità nel cuore del Vescovado.</p>
+      </div>
+    </section>
+
+    <!-- Introduzione -->
+    <section class="section">
+      <div class="container">
+        <h2>Un simbolo di autorità spirituale</h2>
+        <div class="two-columns">
+          <div>
+            <p>Il Palazzo Vescovile di Nocera rappresenta non solo la sede ufficiale del vescovo, ma un autentico gioiello architettonico che testimonia il prestigio e l'importanza della diocesi attraverso i secoli. Situato accanto alla Cattedrale di San Prisco, il palazzo si erge maestoso nel cuore del quartiere storico del Vescovado.</p>
+            <p>Con le sue eleganti sale affrescate, i preziosi arredi d'epoca e i suoi cortili interni, questo edificio racconta la storia della Chiesa nocerina e dei suoi rapporti con il potere temporale. Ogni stanza, ogni corridoio, ogni dettaglio architettonico rivela l'evoluzione degli stili e del gusto artistico dal Medioevo all'età moderna.</p>
+          </div>
+          <div>
+            <img src="/api/placeholder/500/350" alt="Facciata del Palazzo Vescovile" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storia -->
+    <section class="section" style="background-color: #f0f4f8;">
+      <div class="container">
+        <h2>Storia e trasformazioni</h2>
+        <p>Le origini del Palazzo Vescovile di Nocera risalgono al periodo longobardo, quando il primo nucleo edilizio fu costruito come sede amministrativa e residenziale per il vescovo della diocesi. Nel corso dei secoli, l'edificio ha subito numerose trasformazioni e ampliamenti, riflettendo sia le necessità funzionali che i cambiamenti nel gusto estetico.</p>
+        
+        <div class="info-box">
+          <h3>Cronologia essenziale</h3>
+          <ul class="feature-list">
+            <li><strong>IX secolo</strong>: Prime testimonianze documentali dell'esistenza di una residenza vescovile</li>
+            <li><strong>XV secolo</strong>: Importanti lavori di ampliamento sotto l'episcopato di Pietro Strambone</li>
+            <li><strong>XVII secolo</strong>: Ristrutturazione in stile barocco e realizzazione degli affreschi principali</li>
+            <li><strong>XVIII secolo</strong>: Consolidamento dell'ala nord e creazione del giardino vescovile</li>
+            <li><strong>XX secolo</strong>: Restauri conservativi e adeguamento alle nuove esigenze pastorali</li>
+          </ul>
+        </div>
+        
+        <div class="quote">
+          "Il Palazzo Vescovile non è solo pietra, ma memoria viva di una comunità che ha trovato nella fede la sua guida e nella bellezza la sua espressione più alta."
+        </div>
+      </div>
+    </section>
+
+    <!-- Galleria -->
+    <section class="section">
+      <div class="container">
+        <h2>Esplora gli ambienti</h2>
+        <p>Il palazzo si sviluppa su tre livelli e include numerosi ambienti di grande valore storico e artistico. Visitarlo significa intraprendere un viaggio attraverso secoli di storia ecclesiale e civile.</p>
+        
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="/api/placeholder/400/300" alt="Salone degli Stemmi">
+            <div style="padding: 1rem;">
+              <h3>Salone degli Stemmi</h3>
+              <p>Decorato con gli emblemi araldici dei vescovi che si sono succeduti alla guida della diocesi.</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/400/300" alt="Biblioteca Vescovile">
+            <div style="padding: 1rem;">
+              <h3>Biblioteca Vescovile</h3>
+              <p>Custodisce antichi volumi, codici miniati e documenti risalenti a diversi periodi storici.</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/400/300" alt="Cappella Privata">
+            <div style="padding: 1rem;">
+              <h3>Cappella Privata</h3>
+              <p>Piccolo gioiello di devozione con preziosi arredi liturgici e affreschi devozionali.</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/400/300" alt="Giardino Vescovile">
+            <div style="padding: 1rem;">
+              <h3>Giardino Vescovile</h3>
+              <p>Oasi di pace con piante ornamentali e una suggestiva vista panoramica sulla città.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tesori artistici -->
+    <section class="section" style="background-color: #f0f4f8;">
+      <div class="container">
+        <h2>Tesori artistici</h2>
+        <div class="two-columns">
+          <div>
+            <p>Il Palazzo Vescovile conserva numerose opere d'arte di grande valore, frutto della committenza dei vescovi che si sono succeduti nei secoli e testimonianza della vivacità culturale della diocesi.</p>
+            <p>Tra i principali capolavori custoditi all'interno del palazzo si annoverano:</p>
+            <ul class="feature-list">
+              <li>Il ciclo di affreschi del XVII secolo raffigurante le storie dei santi patroni</li>
+              <li>Il ritratto dei vescovi della diocesi, una galleria che copre oltre sei secoli di storia</li>
+              <li>Mobili d'epoca finemente intarsiati, espressione dell'abilità degli artigiani locali</li>
+              <li>Paramenti sacri e oggetti liturgici di grande pregio orafo</li>
+              <li>Documenti storici tra cui pergamene, bolle papali e registri ecclesiastici</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/api/placeholder/500/350" alt="Affresco nel salone principale" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosità -->
+    <section class="section">
+      <div class="container">
+        <h2>Curiosità e aneddoti</h2>
+        
+        <div class="info-box">
+          <h3>Lo sapevi che...</h3>
+          <p>Nel sottosuolo del palazzo si estende un sistema di passaggi che, secondo la tradizione, collegavano la residenza vescovile con la cattedrale e altre strutture ecclesiastiche del quartiere. Questi passaggi segreti sarebbero stati utilizzati nei periodi di pericolo o durante le cerimonie più solenni.</p>
+        </div>
+        
+        <p>Si narra che durante l'invasione francese del 1799, il vescovo dell'epoca fece nascondere i tesori della diocesi in un vano segreto ricavato nelle mura del palazzo. Alcuni di questi oggetti sarebbero stati ritrovati solo nel secolo successivo durante lavori di restauro.</p>
+        
+        <p>Il palazzo è stato anche teatro di importanti eventi storici: nel 1822 ospitò il re Ferdinando I di Borbone durante una sua visita alla città, e nel corso dell'Ottocento divenne un importante centro di dibattito teologico e culturale, ospitando convegni e incontri con intellettuali dell'epoca.</p>
+
+        <div class="quote">
+          "Le mura del Palazzo Vescovile hanno ascoltato preghiere e discussioni, hanno assistito a decisioni che hanno segnato la storia della comunità, hanno protetto tesori materiali e spirituali attraverso i secoli."
+        </div>
+      </div>
+    </section>
+
+    <!-- Come visitare -->
+    <section class="section" style="background-color: #f0f4f8;">
+      <div class="container">
+        <h2>Come visitare il Palazzo</h2>
+        <div class="two-columns">
+          <div>
+            <h3 style="color: #007acc; margin-bottom: 1rem;">Orari e modalità di visita</h3>
+            <p>Il Palazzo Vescovile è aperto al pubblico nei seguenti giorni:</p>
+            <ul class="feature-list">
+              <li><strong>Martedì e Giovedì</strong>: 9:30 - 12:30</li>
+              <li><strong>Sabato</strong>: 15:00 - 18:00</li>
+              <li><strong>Domenica</strong>: 10:00 - 13:00</li>
+            </ul>
+            <p>Le visite guidate partono ogni ora e hanno una durata di circa 60 minuti. È consigliata la prenotazione, soprattutto per i gruppi superiori a 10 persone.</p>
+          </div>
+          <div>
+            <h3 style="color: #007acc; margin-bottom: 1rem;">Informazioni utili</h3>
+            <ul class="feature-list">
+              <li>Ingresso: offerta libera (consigliato €5 per contribuire al mantenimento)</li>
+              <li>Audioguide disponibili in italiano, inglese e francese</li>
+              <li>Accessibilità per persone con mobilità ridotta (percorso dedicato)</li>
+              <li>Bookshop con pubblicazioni sulla storia della diocesi</li>
+              <li>Parcheggio disponibile nelle vicinanze (Piazza del Vescovado)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action">
+      <h2>Scopri tutti i tesori del Vescovado</h2>
+      <p>Esplora gli eventi, le passeggiate guidate e la storia viva del quartiere.</p>
+      <a href="../scopri.html" class="btn">Inizia il viaggio</a>
+    </section>
+  </main>
+
+  <br>
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <h4>© 2025 Vescovado di Nocera</h4>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/contatti.html">Contatti</a>
+        <a href="/credits.html">Crediti</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Instagram">📸</a>
+        <a href="#" title="Email">✉️</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Script di base per migliorare l'esperienza utente
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animazione smooth scroll per i link interni
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
